@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <script defer src="./assets/fontawesome/js/solid.min.js"></script>
+    <script defer src="./assets/fontawesome/js/fontawesome.min.js"></script>
+    <script>
+      window.onload = () => {
+        const mobileMenuIcon = document.getElementById("mobile-menu-button");
+        mobileMenuIcon.addEventListener("click", () => {
+          if(mobileMenuIcon.classList.contains("open")){
+            mobileMenuIcon.classList.remove("open");
+          } else {
+            mobileMenuIcon.classList.add("open");
+          }
+        });
+
+        const bookingMenuItem = document.getElementById("booking-menu-item");
+        bookingMenuItem.addEventListener("click", () => {
+          if(bookingMenuItem.classList.contains("open")){
+            bookingMenuItem.classList.remove("open");
+          } else {
+            bookingMenuItem.classList.add("open");
+          }
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <main>
+      <header class="text-white">
+        <nav class="sticky flex top-0 bg-gradient-to-r from-sky-500 to-teal-500">
+          <!-- Logo Area -->
+          <div class="flex items-center p-2 gap-2">
+            <img src="./assets/images/logo-inverted.png" width="50" />
+            <div class="font-bold text-2xl">
+              meet<span class="text-pink-500">UP</span>
+            </div>
+          </div>
+          <!-- Mobile Menu -->
+          <div class="block md:hidden ml-auto pr-4 my-auto cursor-pointer">
+            <div id="mobile-menu-button" class="group peer">
+              <div class="top-0 h-1 w-8 rounded-full bg-zinc-200 group-open:rotate-45 group-open:top-2 relative transition-all"></div>
+              <div class="opacity-100 group-open:opacity-0 h-1 w-8 rounded-full bg-zinc-200 mt-1 transition-all"></div>
+              <div class="top-0 group-open:-rotate-45 group-open:-top-2 relative h-1 w-8 rounded-full bg-zinc-200 mt-1 transition-all"></div>
+            </div>
+            <div class="absolute bg-gradient-to-r from-sky-500 to-teal-500 w-full left-0 top-[62px] peer-open:block hidden">
+              <div class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-teal-50 hover:text-zinc-200 hover:bg-black/10 transition-colors ease-in-out">
+                <span>Home</span>
+              </div>
+              <div class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-teal-50 hover:text-zinc-200 hover:bg-black/10 transition-colors ease-in-out">
+                <span>Speaker</span>
+              </div>
+              <div id="booking-menu-item" class="group relative h-full cursor-pointer text-teal-50 hover:text-zinc-200 hover:bg-black/10 transition-colors ease-in-out">
+                <div class="p-4 text-center font-bold">Booking <i class="fa-sharp fa-regular fa-caret-down"></i></div>
+                <div class="hidden group-open:block">
+                  <div class="text-center p-4 relative hover:bg-black/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-teal-50">
+                    <span>Regular House</span>
+                  </div>
+                  <div class="text-center p-4 relative hover:bg-black/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-teal-50">
+                    <span>Platinum House</span>
+                  </div>
+                </div>
+              </div>
+              <div class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-teal-50 hover:text-zinc-200 hover:bg-black/10 transition-colors ease-in-out">
+                <span>Contact</span>
+              </div>
+            </div>
+          </div>
+          <!-- Desktop Menu -->
+          <div class="flex-1 md:flex hidden items-center justify-end">
+            <div class="menu-item">
+              <span>Home</span>
+            </div>
+            <div class="menu-item">
+              <span>Speaker</span>
+            </div>
+            <div class="menu-item group">
+              <span>Booking</span>
+              <div class="group-hover:block hidden absolute top-full bg-teal-500 right-0 whitespace-nowrap rounded-b-md text-right">
+                <div class="p-4 hover:bg-black/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-teal-50">
+                  <span>Regular House</span>
+                </div>
+                <div class="p-4 hover:bg-black/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-teal-50">
+                  <span>Platinum House</span>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item">
+              <span>Contact</span>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </main>
+  </body>
+</html>
