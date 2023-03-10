@@ -25,6 +25,16 @@
             bookingMenuItem.classList.add("open");
           }
         });
+
+        const darkModeToggle = document.getElementById("dark-mode-toggle");
+        darkModeToggle.addEventListener("click", () => {
+          if (document.body.classList.contains("dark")) {
+            document.body.classList.remove("dark");
+          } else {
+            document.body.classList.add("dark");
+          }
+        });
+
         const previousButton = document.getElementById("previous");
         const nextButton = document.getElementById("next");
         const carousel = document.getElementById("carousel");
@@ -40,12 +50,18 @@
     </script>
   </head>
   <body>
-    <main>
+    <main class="bg-white dark:bg-zinc-900">
       <header class="text-white">
         <!-- Dark/Light swtich button -->
-        
+        <div
+          id="dark-mode-toggle"
+          class="fixed top-24 right-0 z-10 inline-block w-12 cursor-pointer rounded-l-lg bg-zinc-900 p-2 text-3xl text-zinc-200 dark:bg-zinc-200 dark:text-zinc-900"
+        >
+          <i class="fa-solid fa-sun dark:hidden"></i>
+          <i class="fa-solid fa-moon hidden dark:inline"></i>
+        </div>
         <!-- Navbar Section -->
-        <nav class="sticky flex top-0 bg-gradient-to-r from-sky-500 to-teal-500">
+        <nav class="sticky z-10 flex top-0 bg-gradient-to-r from-sky-500 to-teal-500">
           <!-- Logo Area -->
           <div class="flex items-center p-2 gap-2">
             <img src="./assets/images/logo-inverted.png" width="50" />
@@ -142,11 +158,11 @@
         </div>
       </header>
       <!-- Carousel slider Section -->
-      <div class="max-w-screen-lg mx-auto mt-20">
-        <h2>
+      <div class="mx-auto mt-10 max-w-screen-lg text-zinc-900 dark:text-zinc-200">
+        <h2 class="mb-4">
           Uplifting
         </h2>
-        <p>
+        <p class="mb-4">
           Every bird, every tree, every flower reminds me what a blessing and privilege it is just to be alive. Before going to sleep every night, forgive everyone and sleep with a clean heart.
         </p>
         <div class="flex">
